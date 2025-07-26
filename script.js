@@ -57,7 +57,7 @@ function displayhappytears() {
 }
 
 // Function to display the cat-heart.gif
-function displayCatHeart() {
+function displayhappydancing() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
     // Get the container where the image will be displayed
@@ -65,9 +65,9 @@ function displayCatHeart() {
     // Create a new Image element for the cat-heart
     var happydancingImage = new Image();
     // Set the source (file path) for the cat-heart image
-    happydancingImage.src = 'happy-dancing.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    happydancingImage.src = 'happydancing.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
     // Set alternative text for the image (for accessibility)
-    happydancingImage.alt = 'happytears';
+    happydancingImage.alt = 'happydancing';
     // When the cat-heart image is fully loaded, add it to the image container
     happydancingImage.onload = function() {
         imageContainer.appendChild(happydancingImage);
