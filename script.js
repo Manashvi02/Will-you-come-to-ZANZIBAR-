@@ -40,7 +40,7 @@ function flashRainbowColors(callback) {
     }, 2000); // Flash colors for 2 seconds
 }
 
-// Function to display the cat.gif initially
+// Function to display the happytears.gif initially
 function displayhappytears() {
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
@@ -56,25 +56,35 @@ function displayhappytears() {
     };
 }
 
-// Function to display the cat-heart.gif
-function displayhappydancing() {
-    // Clear existing content in the image container
-    document.getElementById('image-container').innerHTML = '';
+function displayHappyDancing() {
     // Get the container where the image will be displayed
-    var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat-heart
-    var happydancingImage = new Image();
-    // Set the source (file path) for the cat-heart image
-    happydancingImage.src = 'happydancing.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
-    // Set alternative text for the image (for accessibility)
-    happydancingImage.alt = 'happydancing';
-    // When the cat-heart image is fully loaded, add it to the image container
-    happydancingImage.onload = function() {
-        imageContainer.appendChild(happydancingImage);
-        // Hide the options container
-        document.getElementById('options').style.display = 'none';
+    const imageContainer = document.getElementById('image-container');
+
+    // Clear previous content
+    imageContainer.innerHTML = '';
+
+    // Create a new image element
+    const dancingImg = new Image();
+    dancingImg.src = './happydancing.gif'; // Adjust path if needed
+    dancingImg.alt = 'Happy Dancing';
+
+    // Append image when loaded
+    dancingImg.onload = function () {
+        imageContainer.appendChild(dancingImg);
+
+        // Hide the options container if it exists
+        const options = document.getElementById('options');
+        if (options) {
+            options.style.display = 'none';
+        }
+    };
+
+    // Handle error if image fails to load
+    dancingImg.onerror = function () {
+        console.error("Could not load 'happydancing.gif'");
+        imageContainer.textContent = "Failed to load the dancing image.";
     };
 }
 
-// Display the cat.gif initially
+// Display the happytears.gif initially
 displayhappytears();
