@@ -56,35 +56,21 @@ function displayhappytears() {
     };
 }
 
-function displayHappyDancing() {
+// Function to display the happydancing.gif initially
+function displayhappydancing() {
     // Get the container where the image will be displayed
-    const imageContainer = document.getElementById('image-container');
-
-    // Clear previous content
-    imageContainer.innerHTML = '';
-
-    // Create a new image element
-    const dancingImg = new Image();
-    dancingImg.src = './happydancing.gif'; // Adjust path if needed
-    dancingImg.alt = 'Happy Dancing';
-
-    // Append image when loaded
-    dancingImg.onload = function () {
-        imageContainer.appendChild(dancingImg);
-
-        // Hide the options container if it exists
-        const options = document.getElementById('options');
-        if (options) {
-            options.style.display = 'none';
-        }
-    };
-
-    // Handle error if image fails to load
-    dancingImg.onerror = function () {
-        console.error("Could not load 'happydancing.gif'");
-        imageContainer.textContent = "Failed to load the dancing image.";
+    var imageContainer = document.getElementById('image-container');
+    // Create a new Image element for the cat
+    var happydancingImage = new Image();
+    // Set the source (file path) for the cat image
+    happydancingImage.src = 'happydancing.gif'; // Assuming the cat image is named "cat.gif"
+    // Set alternative text for the image (for accessibility)
+    happydancingImage.alt = 'happydancing';
+    // When the cat image is fully loaded, add it to the image container
+    happydancingImage.onload = function() {
+        imageContainer.appendChild(happydancingImage);
     };
 }
 
-// Display the happytears.gif initially
-displayhappytears();
+// Display the happydancing.gif initially
+displayhappydancing();
